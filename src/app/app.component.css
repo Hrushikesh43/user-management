@@ -1,0 +1,11 @@
+.main-heading
+{
+    background-color: rgba(223, 228, 228, 0.774);
+    margin-top: 10px;
+    
+    
+}
+.main-heading h1 {
+    text-align: center;
+    font-size: 35px;
+}

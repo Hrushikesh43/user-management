@@ -1,0 +1,29 @@
+<!-- user-grid.component.html -->
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Select</th>
+      <th>Username</th>
+      <th>Phone</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let user of users; let i = index">
+      <a [routerLink]="'/user-update/' + user.phone"> <!-- Pass the user index as a route parameter --> 
+        <i class="fa fa-edit"></i>
+      </a>
+      <td>
+        <input type="checkbox" [(ngModel)]="user.selected">
+      </td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.city }}</td>
+
+    </tr>
+  </tbody>
+</table>
+<button routerLink="/user-form">Create User</button>
+<button (click)="deleteSelectedUsers()" >Delete Selected Users</button>

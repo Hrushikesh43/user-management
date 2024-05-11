@@ -1,0 +1,41 @@
+/* styles.css (or any other CSS file in your Angular project) */
+ div h2{
+    text-align: center;
+    
+}
+
+.user-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+input{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+}
+label{
+    margin-left: 10px;
+}

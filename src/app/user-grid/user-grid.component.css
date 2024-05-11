@@ -1,0 +1,50 @@
+/* user-grid.component.css */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+td {
+  vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-right: 10px; /* Add some spacing between buttons */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+tr i{
+  padding-left: 40px;
+  padding-top: 5px;
+  margin-top: 10px;
+  background-color: #f9fbfc;
+}
