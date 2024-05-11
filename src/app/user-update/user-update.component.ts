@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { UserService } from '../user.service';
 })
 export class UserUpdateComponent {
   updateUser :any={};
+  existingUser:any={};
   userIndex: any;
   userPhone:number;
-  constructor(private userService: UserService,private route: ActivatedRoute) {} 
+  constructor(private userService: UserService,private route: ActivatedRoute,private router:Router) {} 
 
   ngOnInit(): void {
     // Get the user index from the route parameters
@@ -27,7 +28,8 @@ export class UserUpdateComponent {
   }
   updateUserDetail()
   {
-    
+    this.existingUser=this.updateUser
+    this.router.navigate(['/user-grid']);
 
   }
 }
