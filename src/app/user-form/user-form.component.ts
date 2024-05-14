@@ -15,7 +15,8 @@ export class UserFormComponent {
 
 
   createUser() {
-    if (this.userService.getUsers().length == 0) {
+    if (this.userService.getUsers().length == 0)
+       {
       /**The below 3 lines is the logic for adding the user to service and then route to grid */
       this.userService.addUser(this.newUser);
       this.newUser = {}; // Clear input fields
@@ -48,4 +49,21 @@ export class UserFormComponent {
     }
     return false;
   }
+
+  /**
+   * Method to check username contains only Alpabets and not numbers and special character
+   * 
+   */
+  public userNamePatternMatch(userName:string) : boolean
+  {
+    let pattern=/^[a-zA-Z_ ]+$/;
+    
+    if(pattern.test(userName))
+      {
+        return true;
+      }else 
+      return false;
+  }
+
+  
 }

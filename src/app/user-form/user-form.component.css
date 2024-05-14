@@ -39,3 +39,18 @@ input{
 label{
     margin-left: 10px;
 }
+
+.user-error-message  {
+    color: red; 
+    font-size: 14px; 
+    display: block;
+    margin-left: 10px;
+    margin-right: 100px;
+    
+  }
+
+  button [disabled]
+  {
+ opacity: 50%;
+  }
+
