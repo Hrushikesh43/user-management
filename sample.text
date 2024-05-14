@@ -1,1 +1,13 @@
-Hrushikesh kajale
+Current work : 
+1. Done with passing the phone number in the route url
+2.Done with not allowing the special character and number in the username input
+ :- One thing not working ie if user gives space in the username then also it is throwing the error
+  Instead username can have spacing also.
+  Once implement point 2 then we can apply same for phone number input where only numbers are allowed
+  and space is not allowed.
+
+  Not able to find how to validate empty username 
+Vishal asked to user ngForm
+--------------
+For formgroup to use import reactiveformsmodule in the app.module.ts and also add in imports array
+you can use jsonplaceholder website to use /users api
