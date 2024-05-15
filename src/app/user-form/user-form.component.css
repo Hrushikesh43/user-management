@@ -35,6 +35,7 @@ button[type="submit"] {
 input{
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 5px;
+   
 }
 label{
     margin-left: 10px;
@@ -52,5 +53,12 @@ label{
   button [disabled]
   {
  opacity: 50%;
+  }
+
+  small{
+    color: red;
+    font-weight: normal;
+    margin-left: 10px;
+    
   }
 

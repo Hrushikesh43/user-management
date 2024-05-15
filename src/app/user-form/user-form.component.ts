@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup ,ReactiveFormsModule ,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -11,20 +12,38 @@ import { Router } from '@angular/router';
 })
 export class UserFormComponent {
   newUser: any = {}; // Initialize an empty object for the new user
+
   constructor(private userService: UserService, private router: Router) { }
 
+  userForm:FormGroup=new FormGroup({
+    id: new FormControl('0'),
+    username:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]*')]),
+    phone: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(10)]),
+    city: new FormControl('')
+  }) 
+
+  get user()
+  {
+    return this.userForm.get('username');
+  }
+
+  get phone()
+  {
+    return this.userForm.get('phone');
+  }
 
   createUser() {
+    
     if (this.userService.getUsers().length == 0)
        {
       /**The below 3 lines is the logic for adding the user to service and then route to grid */
-      this.userService.addUser(this.newUser);
+      this.userService.addUser(this.userForm.value);
       this.newUser = {}; // Clear input fields
       this.router.navigate(['/user-grid']); // Route back to user-grid
     }
-    else if (this.userService.getUsers().length != 0 && !this.duplicateUser(this.newUser)) {
+    else if (this.userService.getUsers().length != 0 && !this.duplicateUser(this.userForm.value)) {
       /**The below 3 lines is the logic for adding the user to service and then route to grid */
-      this.userService.addUser(this.newUser);
+      this.userService.addUser(this.userForm.value);
       this.newUser = {}; // Clear input fields
       this.router.navigate(['/user-grid']); // Route back to user-grid
     }
@@ -39,7 +58,7 @@ export class UserFormComponent {
 
     let existingUser: any[] = this.userService.getUsers();
     for (const user of existingUser) {
-      if (user.username === this.newUser.username && user.phone === this.newUser.phone) {
+      if (user.username === this.userForm.get('username')?.value && user.phone === this.userForm.get('phone')?.value) {
 
         alert("This user already exists!");
         console.log("This user already exists.")
