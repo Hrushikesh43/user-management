@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { UserFormComponent } from '../user-form/user-form.component';
 
 @Component({
   selector: 'app-user-update',
@@ -10,6 +11,7 @@ import { UserService } from '../user.service';
 export class UserUpdateComponent {
   updateUser :any={};
   existingUser:any={};
+  cities:string[]=['Banglore','Pune','Mumbai','Hyderabad'];
   userIndex: any;
   userPhone:number;
   constructor(private userService: UserService,private route: ActivatedRoute,private router:Router) {} 
@@ -24,6 +26,7 @@ export class UserUpdateComponent {
       console.log(params);
       this.userPhone=params.number;
       this.updateUser=this.userService.getUserByPhoneNumber(this.userPhone);
+     
     });
   }
   updateUserDetail()
