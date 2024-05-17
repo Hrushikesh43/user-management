@@ -3,14 +3,14 @@ Reactive form validators :
 2.Apply validations
 3.Define Getters for fields
 4.Show errors and disable button
-
-
-        <span>
-          Required field..
-        </span>
-      </small>
-      <small *ngIf="user&& user.invalid&&user.touched&& user.errors?.Pattern">
-        <span>
-          Pattern does not match
-        </span>
-      </small>
+------------------------------
+city as dropdown -single select
+male female radio button -> this is done
+ multi select - food preferences  
+ ---------------------------------------------- 
+ Logic for radio button gender in user update form :
+ We’ve replaced the text input field with two radio buttons (one for male and one for female).
+The [(ngModel)] binding ensures that the selected value is stored in the updateUser.gender property.
+The name="gender" attribute ensures that the radio buttons are part of the same group (so only one can be selected at a time).
+The value attribute of each radio button corresponds to the gender value (‘male’ or ‘female’).
+Whichever gender value is present in updateUser.gender, the corresponding radio button will be selected by default.   

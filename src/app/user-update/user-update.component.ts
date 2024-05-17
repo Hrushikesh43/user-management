@@ -28,6 +28,7 @@ export class UserUpdateComponent {
   }
   updateUserDetail()
   {
+    console.log(this.updateUser);
     this.existingUser=this.updateUser
     this.router.navigate(['/user-grid']);
 
