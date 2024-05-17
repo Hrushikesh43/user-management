@@ -12,14 +12,15 @@ import { FormControl, FormGroup ,ReactiveFormsModule ,Validators} from '@angular
 })
 export class UserFormComponent {
   newUser: any = {}; // Initialize an empty object for the new user
-
+  genders : string[]=['male','female'];
   constructor(private userService: UserService, private router: Router) { }
 
   userForm:FormGroup=new FormGroup({
     id: new FormControl('0'),
     username:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]*')]),
     phone: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(10)]),
-    city: new FormControl('')
+    city: new FormControl(''),
+    gender:new FormControl('',Validators.required)
   }) 
 
   get user()
@@ -38,6 +39,7 @@ export class UserFormComponent {
        {
       /**The below 3 lines is the logic for adding the user to service and then route to grid */
       this.userService.addUser(this.userForm.value);
+      console.log(this.userForm.value);
       this.newUser = {}; // Clear input fields
       this.router.navigate(['/user-grid']); // Route back to user-grid
     }
