@@ -9,19 +9,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from './user.service';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AppComponent,
     UserGridComponent,
     UserFormComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,NgSelectModule
+    
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

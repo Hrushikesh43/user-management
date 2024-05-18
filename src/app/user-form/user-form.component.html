@@ -52,7 +52,13 @@
       </select>
     </div>
     </div>
-
+    <div class="form-group">
+   <div class="label">Food Prefernces</div>
+   <ng-select class="w-20" formControlName="foodControl" [multiple]="true" placeholder="">
+    <ng-option *ngFor="let food of foodlist" [value]="food.name">
+      {{food.name}}</ng-option>
+   </ng-select>
+  </div>
 
 
   </div>

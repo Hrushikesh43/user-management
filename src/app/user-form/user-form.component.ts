@@ -14,6 +14,12 @@ export class UserFormComponent {
   newUser: any = {}; // Initialize an empty object for the new user
   genders : string[]=['male','female'];
   city:string[]=['Banglore','Pune','Mumbai','Hyderabad'];
+  foodlist=[
+    {id:1,name:'Chinese'},
+    {id:2,name:'Indian'},
+    {id:3,name:'Punjabi'},
+    {id:4,name:'South Indian'}
+  ];
   constructor(private userService: UserService, private router: Router) { }
 
   userForm:FormGroup=new FormGroup({
@@ -21,7 +27,8 @@ export class UserFormComponent {
     username:new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]*')]),
     phone: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(10)]),
     city: new FormControl('',[Validators.required]),
-    gender:new FormControl('',Validators.required)
+    gender:new FormControl('',Validators.required),
+    foodControl:new FormControl('',Validators.required)
   }) 
 
   get user()

@@ -4,7 +4,7 @@ Reactive form validators :
 3.Define Getters for fields
 4.Show errors and disable button
 ------------------------------
-city as dropdown -single select
+city as dropdown -single select -> this is done
 male female radio button -> this is done
  multi select - food preferences  
  ---------------------------------------------- 

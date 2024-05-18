@@ -14,18 +14,22 @@ export class UserUpdateComponent {
   cities:string[]=['Banglore','Pune','Mumbai','Hyderabad'];
   userIndex: any;
   userPhone:number;
+  foodUpdateList=[
+    {id:1,name:'Chinese'},
+    {id:2,name:'Indian'},
+    {id:3,name:'Punjabi'},
+    {id:4,name:'South Indian'}
+  ];
   constructor(private userService: UserService,private route: ActivatedRoute,private router:Router) {} 
 
   ngOnInit(): void {
     // Get the user index from the route parameters
     console.log(this.route);
     this.route.params.subscribe((params) => {
-     // this.userPhone = params['index']; // Convert to a number (if needed)
-      // Now you can use this.userIndex to fetch the specific user data for editing
-      //this.updateUser=this.userService.getUserByIndex(this.userIndex);
       console.log(params);
       this.userPhone=params.number;
       this.updateUser=this.userService.getUserByPhoneNumber(this.userPhone);
+     
      
     });
   }
