@@ -1,29 +1,11 @@
 /* styles.css (or any other CSS file in your Angular project) */
- div h2{
-    text-align: center;
-    
+h2 {
+  
+  margin-left: 70px;
 }
 
-.user-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-   
-}
-
-.form-group {
-    flex: 1;
-    margin-right: 10px;
-}
-
-/* Style the submit button */
 button[type="submit"] {
-    background-color: #007bff;
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -33,61 +15,63 @@ button[type="submit"] {
   margin-left: 10px;
   margin-top: 20px;
 }
-input{
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 5px;
-   
+
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+  border: 1px solid #0000004b;
+
 }
-label{
-    margin-left: 10px;
+
+label {
+  margin-left: 10px;
 }
 
-.user-error-message  {
-    color: red; 
-    font-size: 14px; 
-    display: block;
-    margin-left: 10px;
-    margin-right: 100px;
-    
-  }
+.user-error-message {
+  color: red;
+  font-size: 14px;
+  display: block;
+  margin-left: 10px;
+  margin-right: 100px;
 
-  button [disabled]
-  {
- opacity: 50%;
-  }
+}
 
-  small{
-    color: red;
-    font-weight: normal;
-    margin-left: 10px;
-    
-  }
-  .form-check {
-    
-    margin-top: 10px;
-   
-  }
+button [disabled] {
+  opacity: 50%;
+}
 
-  .radio-button{
-    display:inline-flexbox;
-    
-  }
-  .radio-button p{
-    margin-top: 10px;
-    margin-left: 10px;
-  }
+small {
+  color: red;
+  font-weight: normal;
+  margin-left: 10px;
 
-  .city-dropdown{
-    padding-left: 20px;
-    margin-top: 5px;
-  }
+}
 
-  ng-select {
-    border: 1px solid #ccc;
+ng-select {
+  border: 1px solid #000000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  
+}
 
-  
+.container {
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 60%;
+  padding-left: 250px;
+}
+
+
+button {
+  margin-bottom: 10px;
+}
+button[type="button"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
 

@@ -1,6 +1,6 @@
 // user-form.component.ts
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup ,ReactiveFormsModule ,Validators} from '@angular/forms';
@@ -10,8 +10,9 @@ import { FormControl, FormGroup ,ReactiveFormsModule ,Validators} from '@angular
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css'],
 })
-export class UserFormComponent {
+export class UserFormComponent implements OnInit{
   newUser: any = {}; // Initialize an empty object for the new user
+  public userList=[];
   genders : string[]=['male','female'];
   city:string[]=['Banglore','Pune','Mumbai','Hyderabad'];
   foodlist=[
@@ -21,6 +22,11 @@ export class UserFormComponent {
     {id:4,name:'South Indian'}
   ];
   constructor(private userService: UserService, private router: Router) { }
+  ngOnInit(): void {
+    this.userService.getJsonUsers().subscribe(
+      data=>this.userList=data
+    );
+  }
 
   userForm:FormGroup=new FormGroup({
     id: new FormControl('0'),
@@ -65,7 +71,6 @@ export class UserFormComponent {
       console.log('User already exists. Cannot add duplicate user.');
       // You can display an error message to the user if needed
     }
-
   }
   duplicateUser(user: any): boolean {
     //changes from here
@@ -100,3 +105,5 @@ export class UserFormComponent {
 
   
 }
+
+

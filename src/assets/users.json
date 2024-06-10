@@ -1,0 +1,21 @@
+
+[
+    {
+      "id": 1,
+      "username": "Hrushikesh Kajale",
+      "phone": "8180078016",
+      "city" :["Pune"],
+      "gender" :"male",
+      "foodControl":["Chinese"]
+    },
+    {
+        "id": 2,
+        "username": "Sachin Bhapkar",
+        "phone": "9511690097",
+        "city" :["Mumbai"],
+        "gender" :"male",
+        "foodControl":["South Indian"]
+      }
+    
+  ]
+  

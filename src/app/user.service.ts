@@ -1,14 +1,25 @@
 // user.service.ts
 
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from './User';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private users: any[] = []; // Array to store user data
+  public users: any[] = []; // Array to store user data
+  private userslist = 'assets/users.json';
+ 
+
+
+  constructor(private http: HttpClient) {
+    
+
+  }
   
-  constructor() {}
+  
 
   // Method to add a new user
   addUser(user: any) {
@@ -51,4 +62,16 @@ export class UserService {
  
   
   }
+
+  /**
+   * Method to pull data from Json file to display users by default
+   */
+  getJsonUsers(): Observable<User[]> {
+
+    return  this.http.get<User[]>(this.userslist);
+  }
+
+  
+
+  
 }

@@ -14,3 +14,38 @@ The [(ngModel)] binding ensures that the selected value is stored in the updateU
 The name="gender" attribute ensures that the radio buttons are part of the same group (so only one can be selected at a time).
 The value attribute of each radio button corresponds to the gender value (‘male’ or ‘female’).
 Whichever gender value is present in updateUser.gender, the corresponding radio button will be selected by default.   
+
+Next requirement :
+1.Align user form input one below the other.
+2.Create a json file for users which will be default populate in the grid.
+
+by default user should be visible 
+create one json done
+
+pull data from json done
+------------------
+latest update : 
+reduce the div done
+structure should be : 
+form-group 
+  |
+multiple input buttons all 
+  | 
+row - two col for city and food preferences
+--------------------------------------------------------
+create user interface 
+In the app folder create user.ts
+code : 
+export interface User {
+  id:number,
+  name:string,
+  city:string like this
+}
+So we have to cast our Observable to User type 
+example :
+getUser: Observable<User[]>()
+{
+  return this.http.get<User[]>("api url")
+}
+
+
