@@ -10,6 +10,8 @@ import { UserService } from './user.service';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AgGridAngular } from 'ag-grid-angular';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule,NgSelectModule
+    ReactiveFormsModule,NgSelectModule,
+    AgGridAngular,
+    HttpClientModule
     
   ],
   providers: [UserService],
