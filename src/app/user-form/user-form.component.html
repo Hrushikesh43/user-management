@@ -1,0 +1,24 @@
+<form  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="uname">Name:</label>
+    <input type="text" id="uname" name="uname" formControlName="username">
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" formControlName="phone">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" formControlName="email">
+
+    <button type="submit">Create</button>
+
+   @if(emailIsInvalid)
+   {
+    <p>Please enter the valid email address</p>
+   }
+   @if (userNameIsInvalid) {
+    <p>Please enter valid User name</p>
+   }
+   @if(phoneIsInvalid)
+   {
+    <p>Please enter valid Phone number</p>
+   }
+</form>
