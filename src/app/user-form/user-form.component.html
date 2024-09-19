@@ -3,27 +3,30 @@
         <div class="form-group col-md-4">
             <label for="uname">Name:</label>
             <input class="form-control" type="text" id="uname" name="uname" formControlName="username">
+            @if (userNameIsInvalid) {
+            <small>Please enter valid User name</small>
+            }
         </div>
         <div class="form-group col-md-4">
             <label for="phone">Phone:</label>
             <input class="form-control" type="text" id="phone" name="phone" formControlName="phone">
+            @if(phoneIsInvalid)
+            {
+            <small>Please enter valid Phone number</small>
+            }
         </div>
         <div class="form-group col-md-4">
             <label for="email">Email:</label>
             <input class="form-control" type="text" id="email" name="email" formControlName="email">
+            @if(emailIsInvalid)
+            {
+            <small>Please enter the valid email address</small>
+            }
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 
-    @if(emailIsInvalid)
-    {
-    <p class="control-error">Please enter the valid email address</p>
-    }
-    @if (userNameIsInvalid) {
-    <p>Please enter valid User name</p>
-    }
-    @if(phoneIsInvalid)
-    {
-    <p>Please enter valid Phone number</p>
-    }
+
+
+
 </form>
