@@ -18,7 +18,8 @@ export class UserService
     id: new Date().getTime().toString(),
     username: user.username,
     phone: user.phone,
-    email: user.email
+    email: user.email,
+    
   })
   console.log(this.users)
  }
