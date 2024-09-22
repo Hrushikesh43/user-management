@@ -16,10 +16,7 @@ export class UserService
  {
   this.users.unshift({
     id: new Date().getTime().toString(),
-    username: user.username,
-    phone: user.phone,
-    email: user.email,
-    
+   ...user
   })
   console.log(this.users)
  }

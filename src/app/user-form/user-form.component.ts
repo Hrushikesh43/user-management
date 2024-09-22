@@ -17,11 +17,20 @@ export class UserFormComponent {
   
   constructor(private userService:UserService){}
   foodOptions: string[] = ['Indian', 'Chinese', 'Thai', 'Punjabi', 'Maharashtrian', 'South-Indian'];
+  countries: string[] = ['India', 'USA', 'Japan', 'Russia', 'China', 'England'];
   dropdownSettings = {
     singleSelection: false,
     idField: 'item_id',
     textField: 'item_text',
     itemsShowLimit: 3,
+    allowSearchFilter: true
+  };
+  singleSelectSettings = {
+    singleSelection: true,
+    idField: 'item_id',
+    textField: 'item_text',
+    enableCheckAll: false,
+    itemsShowLimit: 1,
     allowSearchFilter: true
   };
   userForm = new FormGroup({
@@ -34,7 +43,8 @@ export class UserFormComponent {
     email: new FormControl('', {
       validators: [Validators.required, Validators.email]
     }),
-    foodPreferences: new FormControl([],{validators: [Validators.required]})
+    foodPreferences: new FormControl([],{validators: [Validators.required]}),
+    country: new FormControl('',{validators: [Validators.required]})
   })
    
   get emailIsInvalid()
@@ -67,7 +77,12 @@ export class UserFormComponent {
     )
   }
 
- 
+ get countryIsInvalid()
+ {
+  return (
+    this.userForm.controls.country.invalid
+  )
+ }
   onSubmit() {
     
     // Create the User object from form data
@@ -75,7 +90,8 @@ const user: User = {
   username: this.userForm.value.username!,
   phone: this.userForm.value.phone!,
   email: this.userForm.value.email!,
-  foodPreferences: this.userForm.value.foodPreferences!
+  foodPreferences: this.userForm.value.foodPreferences!,
+  country: this.userForm.value.country!
 };
 this.userService.adduser(user);
     console.log(user);

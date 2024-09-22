@@ -36,7 +36,19 @@
             <small class="text-danger">Please select atleast one Food Preference</small>
         }
         </div>
+
+        <div class="form-group col-md-4">
+            <label for="foodPreferences">Country Name:</label>
+            <ng-multiselect-dropdown [data]="countries" formControlName="country"
+            [settings]="singleSelectSettings">
+        </ng-multiselect-dropdown>
+  
+        </div>
     </div>
+    <!--Country-->
+    
+       
+    
 
     <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Create</button>
 </form>
