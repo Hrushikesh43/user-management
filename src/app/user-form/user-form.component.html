@@ -1,54 +1,54 @@
 <app-header></app-header>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <label for="uname">Name:</label>
-            <input class="form-control" type="text" id="uname" name="uname" formControlName="username">
-            @if (userNameIsInvalid) {
-            <small>Please enter valid User name</small>
-            }
-        </div>
-        <div class="form-group col-md-4">
-            <label for="phone">Phone:</label>
-            <input class="form-control" type="text" id="phone" name="phone" formControlName="phone">
-            @if(phoneIsInvalid)
-            {
-            <small>Please enter valid Phone number</small>
-            }
-        </div>
-        <div class="form-group col-md-4">
-            <label for="email">Email:</label>
-            <input class="form-control" type="text" id="email" name="email" formControlName="email">
-            @if(emailIsInvalid)
-            {
-            <small>Please enter the valid email address</small>
-            }
-        </div>
-    </div>
-    <!--Food preferences-->
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <label>Food Preferences:</label>
-            <ng-multiselect-dropdown [data]="foodOptions" formControlName="foodPreferences"
-                [settings]="dropdownSettings">
-            </ng-multiselect-dropdown>
-        @if (foodPreferencesIsInvalid) {
-            <small class="text-danger">Please select atleast one Food Preference</small>
-        }
-        </div>
 
-        <div class="form-group col-md-4">
-            <label for="foodPreferences">Country Name:</label>
-            <ng-multiselect-dropdown [data]="countries" formControlName="country"
-            [settings]="singleSelectSettings">
-        </ng-multiselect-dropdown>
-  
-        </div>
+<!-- Wrapper to center form -->
+<div class="container d-flex justify-content-center">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="w-50">
+    <!-- Form Group: Name -->
+    <div class="form-group">
+      <label for="uname">Name:</label>
+      <input class="form-control" type="text" id="uname" name="uname" formControlName="username">
+      <!-- Error Message -->
+      <div *ngIf="userNameIsInvalid" class="text-danger">
+        <small>Please enter valid User name</small>
+      </div>
     </div>
-    <!--Country-->
-    
-       
-    
 
+    <!-- Form Group: Phone -->
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input class="form-control" type="text" id="phone" name="phone" formControlName="phone">
+      <!-- Error Message -->
+      <div *ngIf="phoneIsInvalid" class="text-danger">
+        <small>Please enter valid Phone number</small>
+      </div>
+    </div>
+
+    <!-- Form Group: Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input class="form-control" type="text" id="email" name="email" formControlName="email">
+      <!-- Error Message -->
+      <div *ngIf="emailIsInvalid" class="text-danger">
+        <small>Please enter the valid email address</small>
+      </div>
+    </div>
+
+    <!-- Form Group: Food Preferences -->
+    <div class="form-group">
+      <label>Food Preferences:</label>
+      <ng-multiselect-dropdown [data]="foodOptions" formControlName="foodPreferences" [settings]="dropdownSettings"></ng-multiselect-dropdown>
+      <div *ngIf="foodPreferencesIsInvalid" class="text-danger">
+        <small>Please select at least one Food Preference</small>
+      </div>
+    </div>
+
+    <!-- Form Group: Country -->
+    <div class="form-group">
+      <label for="foodPreferences">Country Name:</label>
+      <ng-multiselect-dropdown [data]="countries" formControlName="country" [settings]="singleSelectSettings"></ng-multiselect-dropdown>
+    </div>
+
+    <!-- Submit Button -->
     <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Create</button>
-</form>
+  </form>
+</div>
