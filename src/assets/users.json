@@ -1,0 +1,163 @@
+[
+    {
+      "id": "1",
+      "email": "john.doe@example.com",
+      "phone": "9876543210",
+      "username": "johndoe",
+      "foodPreferences": ["Indian", "South-Indian"],
+      "country": "India"
+    },
+    {
+      "id": "2",
+      "email": "jane.smith@example.com",
+      "phone": "8765432109",
+      "username": "janesmith",
+      "foodPreferences": ["Chinese", "Maharashtrian"],
+      "country": "USA"
+    },
+    {
+      "id": "3",
+      "email": "alice.jones@example.com",
+      "phone": "7654321098",
+      "username": "alicejones",
+      "foodPreferences": ["Punjabi", "Indian"],
+      "country": "Japan"
+    },
+    {
+      "id": "4",
+      "email": "bob.wilson@example.com",
+      "phone": "6543210987",
+      "username": "bobwilson",
+      "foodPreferences": ["South-Indian", "Thai"],
+      "country": "Russia"
+    },
+    {
+      "id": "5",
+      "email": "emily.brown@example.com",
+      "phone": "5432109876",
+      "username": "emilybrown",
+      "foodPreferences": ["Maharashtrian", "Chinese"],
+      "country": "China"
+    },
+    {
+      "id": "6",
+      "email": "david.miller@example.com",
+      "phone": "4321098765",
+      "username": "davidmiller",
+      "foodPreferences": ["Indian", "Punjabi"],
+      "country": "England"
+    },
+    {
+      "id": "7",
+      "email": "susan.clark@example.com",
+      "phone": "3210987654",
+      "username": "susanclark",
+      "foodPreferences": ["Chinese", "South-Indian"],
+      "country": "Australia"
+    },
+    {
+      "id": "8",
+      "email": "michael.lewis@example.com",
+      "phone": "2109876543",
+      "username": "michaellewis",
+      "foodPreferences": ["Thai", "Maharashtrian"],
+      "country": "India"
+    },
+    {
+      "id": "9",
+      "email": "linda.roberts@example.com",
+      "phone": "1098765432",
+      "username": "lindaroberts",
+      "foodPreferences": ["Indian", "Punjabi"],
+      "country": "USA"
+    },
+    {
+      "id": "10",
+      "email": "chris.turner@example.com",
+      "phone": "1987654321",
+      "username": "christurner",
+      "foodPreferences": ["Thai", "South-Indian"],
+      "country": "Japan"
+    },
+    {
+      "id": "11",
+      "email": "anna.hall@example.com",
+      "phone": "9876501234",
+      "username": "annahall",
+      "foodPreferences": ["Maharashtrian", "Indian"],
+      "country": "Russia"
+    },
+    {
+      "id": "12",
+      "email": "mark.evans@example.com",
+      "phone": "8765401234",
+      "username": "markevans",
+      "foodPreferences": ["Punjabi", "Chinese"],
+      "country": "China"
+    },
+    {
+      "id": "13",
+      "email": "nancy.scott@example.com",
+      "phone": "7654301234",
+      "username": "nancyscott",
+      "foodPreferences": ["South-Indian", "Thai"],
+      "country": "England"
+    },
+    {
+      "id": "14",
+      "email": "paul.martin@example.com",
+      "phone": "6543201234",
+      "username": "paulmartin",
+      "foodPreferences": ["Indian", "Maharashtrian"],
+      "country": "Australia"
+    },
+    {
+      "id": "15",
+      "email": "carol.white@example.com",
+      "phone": "5432101234",
+      "username": "carolwhite",
+      "foodPreferences": ["Chinese", "Punjabi"],
+      "country": "India"
+    },
+    {
+      "id": "16",
+      "email": "thomas.harris@example.com",
+      "phone": "4321001234",
+      "username": "thomasharris",
+      "foodPreferences": ["Thai", "South-Indian"],
+      "country": "USA"
+    },
+    {
+      "id": "17",
+      "email": "sarah.king@example.com",
+      "phone": "3210001234",
+      "username": "sarahking",
+      "foodPreferences": ["Maharashtrian", "Indian"],
+      "country": "Japan"
+    },
+    {
+      "id": "18",
+      "email": "peter.moore@example.com",
+      "phone": "2100001234",
+      "username": "petermoore",
+      "foodPreferences": ["Punjabi", "Chinese"],
+      "country": "Russia"
+    },
+    {
+      "id": "19",
+      "email": "jessica.taylor@example.com",
+      "phone": "1090001234",
+      "username": "jessicataylor",
+      "foodPreferences": ["South-Indian", "Thai"],
+      "country": "China"
+    },
+    {
+      "id": "20",
+      "email": "daniel.anderson@example.com",
+      "phone": "1980001234",
+      "username": "danielanderson",
+      "foodPreferences": ["Indian", "Maharashtrian"],
+      "country": "England"
+    }
+  ]
+  

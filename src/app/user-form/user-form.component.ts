@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './user.service';
@@ -6,18 +6,21 @@ import { User } from './user.model';
 import { NgFor,NgIf } from '@angular/common';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { HeaderComponent } from "../header/header.component";
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, NgIf, NgMultiSelectDropDownModule, HeaderComponent],
+  imports: [ReactiveFormsModule, NgFor, NgIf, NgMultiSelectDropDownModule, HeaderComponent, HttpClientModule],
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.css'
 })
-export class UserFormComponent {
-  
+export class UserFormComponent implements OnInit {
+  ngOnInit(){
+    this.userService.fetchUsersFromJson();
+  }
   constructor(private userService:UserService){}
   foodOptions: string[] = ['Indian', 'Chinese', 'Thai', 'Punjabi', 'Maharashtrian', 'South-Indian'];
-  countries: string[] = ['India', 'USA', 'Japan', 'Russia', 'China', 'England'];
+  countries: string[] = ['India', 'USA', 'Japan', 'Russia', 'China', 'England', 'Australia'];
   dropdownSettings = {
     singleSelection: false,
     idField: 'item_id',
@@ -86,7 +89,7 @@ export class UserFormComponent {
   onSubmit() {
     
     // Create the User object from form data
-const user: User = {
+  const user: User = {
   username: this.userForm.value.username!,
   phone: this.userForm.value.phone!,
   email: this.userForm.value.email!,
@@ -95,6 +98,6 @@ const user: User = {
 };
 this.userService.adduser(user);
     console.log(user);
-    this.userForm.reset;
+    this.userForm.reset();
   }
 }
