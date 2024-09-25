@@ -1,0 +1,13 @@
+<app-header></app-header>
+<ag-grid-angular
+[columnDefs]="ColDefs"
+[rowData]="rowData"
+class="ag-theme-alpine"
+[defaultColDef]="defaultColDef"
+[rowSelection]="'single'"
+[domLayout]="'autoHeight'"
+[pagination]="true"
+[paginationPageSize]="paginationPageSize"
+(cellClicked)="onCellClickedEvent($event)"
+(selectionChanged)="onSelectionChanged($event)"
+></ag-grid-angular>

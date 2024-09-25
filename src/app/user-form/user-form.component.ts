@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class UserFormComponent implements OnInit {
   ngOnInit(){
-    this.userService.fetchUsersFromJson();
+    this.userService.fetchUsers();
   }
   constructor(private userService:UserService){}
   foodOptions: string[] = ['Indian', 'Chinese', 'Thai', 'Punjabi', 'Maharashtrian', 'South-Indian'];
