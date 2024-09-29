@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CellClickedEvent, ColDef } from 'ag-grid-community';
 import { AgGridModule } from 'ag-grid-angular';
 import { HeaderComponent } from "../header/header.component";
 import { UserService } from '../user-form/user.service';
 import { User } from '../user-form/user.model';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-user-grid',
   standalone: true,
@@ -12,16 +13,26 @@ import { Router } from '@angular/router';
   templateUrl: './user-grid.component.html',
   styleUrl: './user-grid.component.css'
 })
-export class UserGridComponent implements OnInit  {
+export class UserGridComponent implements OnInit, OnDestroy  {
 constructor(private userService: UserService, private router: Router){}
  userGridList: User[]=[];
+ subscription!: Subscription;
 ngOnInit() {
+  this.userGridList=[];
    // Subscribe to the Observable to get both manual and fetched users
    this.userService.fetchUsers().subscribe(users => {
     this.userGridList = users;
     console.log('Users fetched and manual are', this.userGridList);
   });
 
+}
+ngOnDestroy() {
+  if(this.subscription)
+  {
+    this.subscription.unsubscribe();
+  }
+  this.userGridList=[];
+  console.log("Called ngOnDestroy and userGridList is:", this.userGridList)
 }
   
 ColDefs: ColDef[] =[

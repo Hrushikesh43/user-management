@@ -7,6 +7,7 @@ import { NgFor,NgIf } from '@angular/common';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { HeaderComponent } from "../header/header.component";
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-form',
   standalone: true,
@@ -18,7 +19,7 @@ export class UserFormComponent implements OnInit {
   ngOnInit(){
     this.userService.fetchUsers();
   }
-  constructor(private userService:UserService){}
+  constructor(private userService:UserService, private router: Router){}
   foodOptions: string[] = ['Indian', 'Chinese', 'Thai', 'Punjabi', 'Maharashtrian', 'South-Indian'];
   countries: string[] = ['India', 'USA', 'Japan', 'Russia', 'China', 'England', 'Australia'];
   dropdownSettings = {
@@ -99,5 +100,6 @@ export class UserFormComponent implements OnInit {
 this.userService.adduser(user);
     console.log(user);
     this.userForm.reset();
+    this.router.navigate(['']);
   }
 }
