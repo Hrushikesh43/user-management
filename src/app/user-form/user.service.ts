@@ -1,40 +1,40 @@
 import { Injectable } from "@angular/core";
 import { User } from "./user.model";
 import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs";
+import { map, Observable } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class UserService {
     constructor(private http: HttpClient) { }
     private usersURL = 'assets/users.json';
-    loadedusers: any[] = [];
+    loadedUsers: any[] = [];
 
     adduser(user: User) {
-        this.loadedusers.unshift({
+        this.loadedUsers.unshift({
             id: new Date().getTime().toString(),
             ...user
         })
-        console.log(this.loadedusers)
+        console.log(this.loadedUsers)
     }
-    fetchUsers(): User[] {
-        this.getUsersAPI();
-        return this.loadedusers;
+    fetchUsers(): Observable<User[]> {
+        return this.getUsersAPI().pipe(
+            map(fetchedUsers => {
+                // Combine manually added users with fetched users
+                this.loadedUsers = [...this.loadedUsers, ...fetchedUsers];
+                return this.loadedUsers;  // Return the combined array
+            })
+        );
     }
-
-private getUsersAPI() {
-        this.http.get<User[]>(this.usersURL)
-            .pipe(map(responseData => {
+    
+    private getUsersAPI(): Observable<User[]> {
+        return this.http.get<User[]>(this.usersURL).pipe(
+            map(responseData => {
                 const usersArray: User[] = [];
                 for (const user of responseData) {
-                    usersArray.push(user)
+                    usersArray.push(user);
                 }
-                return usersArray
-            }))
-            .subscribe(jsonUsers => {
-                this.loadedusers = jsonUsers;
-                console.log('Loaded users are', this.loadedusers)
-
-            }
-            )
+                return usersArray;  // Return the fetched users
+            })
+        );
     }
 }

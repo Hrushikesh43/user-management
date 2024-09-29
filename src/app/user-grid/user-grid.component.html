@@ -1,7 +1,7 @@
-<app-header></app-header>
+
 <ag-grid-angular
 [columnDefs]="ColDefs"
-[rowData]="rowData"
+[rowData]="userGridList"
 class="ag-theme-alpine"
 [defaultColDef]="defaultColDef"
 [rowSelection]="'single'"
@@ -11,3 +11,4 @@ class="ag-theme-alpine"
 (cellClicked)="onCellClickedEvent($event)"
 (selectionChanged)="onSelectionChanged($event)"
 ></ag-grid-angular>
+<button (click)="goToCreateUser()" class="btn btn-primary">Create User</button>
